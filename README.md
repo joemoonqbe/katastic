@@ -136,6 +136,8 @@ After that, we'll use event storming to figure out the different sections and el
 
 Lastly, we'll put together the system as a bunch of services that work together. ( ADR TBD ) These services will talk to each other directly or through events. We'll explain these services in a way that doesn't tie us down to any specific tools or technologies.
 
+Establish Ubiquitous Language for clearer understanding and standardisation
+
 ### Architecture characteristics analysis
 
 
@@ -148,25 +150,94 @@ Context-Actors
 
 ![Context-Actors](diagrams/Context-Actors.jpg)
 *Figure 2 Context Diagram*
-#### Actors 
-Personas
-User /Customers
-Warrior Admin
-Warrior Analytics team
-Warrior Support team 
-Warrior Engineers
-
-
+ 
 
 ![Event-Stroming](diagrams/Event-Stroming.jpg)
 *Figure 3 Event Stroming Diagram*
 
+### Container
+
+##### Web App
+Technology: HTML, CSS, JavaScript (React or Angular)
+Responsibility: Displaying the user dashboard, making RESTful API calls to the Backend API.
+Communicates with: Backend API
+
+##### Mobile App
+Technology: Native Mobile Development (iOS/Android) 
+Responsibility: Same as Web Frontend but optimized for mobile.
+Communicates with: Backend API, External Social Media APIs for sharing
+
+##### Admin App
+Technology: HTML, CSS, JavaScript (React or Angular)
+Responsibility: Displaying the Admin console, making RESTful API calls to the Backend API to suppor the Road warrior app
+Communicates with: Backend API, External Social Media APIs for sharing
+
+##### API Gateway
+Technology: High speed api gatweway using nginix/gateway
+Responsibility: Handles apic, communicates with backend apis, apply api policies like rate-limiting, JWT validation,threat protection
+Communicates with: All backend services 
+
+##### UserProfile  Service
+Technology: Build using Node/Go/java
+Responsibility: Backend service for any userprofile operations, Key service which should be highly available and critial
+Communicates with: Other Backend services
+
+##### Email Parsing Service
+Technology: Serverless Functions or background jobs
+Responsibility: Scans and filters emails for travel details.
+Communicates with: Backend API, User's Email Provider
+
+##### Booking Aggregation  Service
+Technology: Build using Node/Go/java
+Responsibility: Brain of the warrior platform. Backend service for any trip realted operations, Key service which should be highly available and critial
+Communicates with: Other Backend services
+
+##### Notification Service
+Technology: Build using Node/Go/java to interface with external communciation platforms as well as warrior app
+Responsibility: Prvode notifications to user
+Communicates with: Warrior mobile app. Customer communication apps like Upwire for SMS and email alerts
+
+##### Analytics Service
+Technology: Big Data technologies like Hadoop or real-time analytics with Kafka. using external advanced saas platform for Insights
+Responsibility: Gathers and analyzes user travel data and other 3rd party data
+Communicates with: Backend API of Insights platform
+
+##### Reporting Service
+Technology: Using standard reporting using database for users .
+Responsibility: Store user profiles, reservations, trips, and analytical data.
+Communicates with: Backend API, Analytics Engine
+
+##### Social Media Platforms APIs
+Used by: BFF for sharing trip details
+Type: External APIs
+
+##### Partner APIs (Airline, Hotel, Car Rental Systems)
+Used by: Backend API for pulling and updating reservation details
+Type: External APIs User's Email Provider
+
+
+#### Actors
+##### End-Users
+ - Interact with: Web Frontend, Mobile App
+##### System Administrators
+- Interact with: Platform for maintenance, Analytics Engine for reports
+
+![Container](diagrams/Container.jpg)
+*Figure 4 Container Diagram*
 
 
 
+### Services
+ - [Admin-Service](services/Admin-Service.md)  
+ - [Analytics-Service](services/Analytics-Service.md)  
+ - [Booking-Aggregation-Service](services/Booking-Aggregation.md)  
+ - [Email-Parsing-Service](services/Email-Parsing-Service.md)  
+ - [Notification-Service](services/Notification-Service.md)  
+ - [Reporting-Service](services/Reporting-Service.md)  
+ - [UserProfile-Service](services/UserProfile-Service.md)  
 
 
-#### Use Cases
+### Systems Architecture
 
 
 
@@ -178,14 +249,14 @@ Warrior Engineers
 
 ## ADRs
 
-[ADR0 Buy Vs Build Components](/ADRs/ADR00-Buy-vs-Build.md)  
-[ADR1 Microservices Architecture](/ADRs/ADR01-Microservices-architecture.md)  
+[ADR0 Buy Vs Build Components](/ADR/ADR00-Buy-vs-Build.md)  
+[ADR1 Microservices Architecture](/ADR/ADR01-Microservices-architecture.md)  
  
-[ADR3 REST API over Http and Websocket protocol](/ADRs/ADR03-Rest-over-http-and-websockets.md)  
-[ADR4 Use of an API layer as the externally accessible interface to the system](/ADRs/ADR04-API-Layer.md)  
+[ADR3 REST API over Http and Websocket protocol](/ADR/ADR03-Rest-over-http-and-websockets.md)  
+[ADR4 Use of an API layer as the externally accessible interface to the system](/ADR/ADR04-API-Layer.md)  
 [ADR5 CQRS and Event Sourcing for message based Profile updates  ](/ADRs/ADR05-CQRS-EventSourcing.md)  
-[ADR6 Use in memory graph store for caching and looking up Officer geolocation](/ADRs/ADR06-InMemory-Graph-Store-For-location-lookup.md)  
-[ADR7 Device triggered notications with geofencing](/ADRs/ADR07-Device-triggered-notifications.md)  
+[ADR6 Use in memory graph store for caching and looking up Officer geolocation](/ADR/ADR06-InMemory-Graph-Store-For-location-lookup.md)  
+[ADR7 Device triggered notications with geofencing](/ADR/ADR07-Device-triggered-notifications.md)  
 
 ## References
 [C4 Model](https://c4model.com/)  
