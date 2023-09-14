@@ -1,13 +1,12 @@
 # katastic
 Repo for the Road Warrier - Architecture Katas from Katatic.
 
-
 Team members : 
-Ali Imtiaz
-Amit Vohra 
-Bhimalkumar Naik 
-Joe Joseph Moonjely 
-Saurabh Chaubey
+- Ali Imtiaz
+- Amit Vohra 
+- Bhimalkumar Naik 
+- Joe Joseph Moonjely 
+- Saurabh Chaubey
 
 ## Contents
 - [Introduction](#introduction) 
@@ -107,9 +106,9 @@ When architecting the next-generation online trip management dashboard, there ar
 | ----------- | ----------- | ----------- |
 | - [] | Scalability | At scale the system or certain components of it will need to serve millions of geographically distributed users. Building those components to be able to be horizontally scalable is vital to success |
 | - [x] | Performance | The system is required to handle high traffic volumes and complete complex time-sensitive workflows. Performance requirements for certain components need to be enforced by explicit architecture fitness functions |
-| - [x] | Availability | The system needs to be availiable at all times |
+| - [x] | Availability | The system needs to be availiable at all times, as this will be to got to app for consumers for all the latest updates for the planned trips |
 | - [] | Interoperability | System needs to interface with airlines, hotels, and car rentals, so having a well-designed API is crucial. |
-| - [x] | Configurability |  As a starup system, its critical to have this chararetic considered early to make sure the time to change is faster and easy as as the platform evolves |
+| - [x] | Configurability |  As a starup system, its critical to have this chararestic considered early to make sure the time to change is faster and easy as as the platform evolves |
 | - [] | Flexibility | Once the system is being used by a critical mass of users, and the affiliate marketing business model is successful, it is very likely we will need to implement new functionality |
 | - [] | Usability | The system needs to work well across web and mobile. Design with a responsive or adaptive UI.Keep the user experience smooth and intuitive across all functionalities.|
 
@@ -239,12 +238,7 @@ Type: External APIs User's Email Provider
 
 ### Systems Architecture
 
-
-
-
-
-
-
+#### Deployment
 
 
 ## ADRs
@@ -272,3 +266,5 @@ Type: External APIs User's Email Provider
 
 ## Credits
 Note: Our work here is inspired by previous winners/participants since this is the first time we have participated in this event.
+
+Original comparison matrix from [DeveloperToArchitect.com](https://www.developertoarchitect.com/downloads/worksheets.html)

@@ -1,7 +1,3 @@
-[> Home](../README.md)    [> Solution Background](README.md)
-[< Prev](README.md)  |  [Next >](ArchitecturePatterns.md)
-
----
 
 # Architecture Principles
 
@@ -9,11 +5,11 @@ The following are high-level architecture principles that we shall apply to the 
 
 ## General Architecture
 
-| Principle                         | Rationale                                                    | Implications                                                 | Characteristics                                                 |
-| :-------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Modular and Microservices Architecture             | To support the evolving nature of the Road Warrior app, it's essential to adopt an architecture that allows for easy modification, expansion, and replacement of individual components. | Components/services can be tested/deployed with minimal business disruption. Improved availability and reliability. With well defined API for each microservice, allows for flexibility in integrating new features and third-party services. Achieves Evolvability | 
+| Principle                                            | Rationale                                                    | Implications                                                 |
+| :--------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| Microservices Architecture             | To support the evolving nature of the Road Warrior app, it's essential to adopt an architecture that allows for easy modification, expansion, and replacement of individual components. | Components/services can be tested/deployed with minimal business disruption. Improved availability and reliability. With well defined API for each microservice, allows for flexibility in integrating new features and third-party services. Achieves Evolvability | 
 | Distributed and Scalable       | As the Road Warrior app is expected to handle a growing number of users and data, optimizing for scalability is essential to ensure that the system can accommodate increasing workloads without compromising performance.| Evenly distribution of requests among server instances. Improving response times using, loadbalancing, caching and other strategies. Achieves Performance  |                   |
-| Dynamic Configuration Management | To make the Road Warrior app adaptable to different user preferences and changing requirements, it's important to have a flexible configuration management system. | Accomodates different user preferences, Avoids code changes and also allows users to customize their ecperience through configurable settings.  Achieves Configurability                     |
+| Dynamic Configuration Management | To make the Road Warrior app adaptable to different user preferences and changing requirements, it's important to have a flexible configuration management system. | Accomodates different user preferences, Avoids code changes and also allows users to customize their experience through configurable settings.  Achieves Configurability                     |
 
 ##  Automation
 
@@ -51,8 +47,3 @@ The following are high-level architecture principles that we shall apply to the 
 | System should be extendable   | New functionality will be required to support system evolution. | can support changing business needs.        |
 | System should be Maintainable | Regular maintenance activities, fixing bugs are essential for any operational system. Will be able to perform change reliably and effectively | Least business disruption during the change |
 
-
-------
-
-[> Home](../README.md)    [> Solution Background](README.md)
-[< Prev](README.md)  |  [Next >](ArchitecturePatterns.md)
