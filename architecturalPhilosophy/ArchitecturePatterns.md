@@ -16,7 +16,7 @@ The key architectural characteristics
 The above characteristics are highlighted in green in the workstyle sheet. 
 
 Architecture Styles Worksheet
-![characteristics](/katastic/diagrams/Arch-Style-Worksheet.jpg)
+![characteristics](../diagrams/Arch-Style-Worksheet.jpg)
 *Figure 1 Architecture Styles Worksheet*
 #### Performance 
     Based on the nature of the starup and idea of servicing the customers better than current providers performance is a key and essential characteristic to be the diffrentiator 
