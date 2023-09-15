@@ -6,7 +6,8 @@ Proposed
 
 ## Rationale 
 A high performance Caching service must be used utilised where applicable to allow for faster access to commonly requested data. 
-This reduces amoung of expensive "read" on databases used across the enterprise. "Cache-Aside" is the most common pattern and caching should be done closer to experience layer.
+This reduces the amount of expensive "read" operations on databases used across the enterprise. 
+"Cache-Aside" is the most common pattern that should be utilised and caching should be done closer to experience layer.
 
 ## Decision
 ADR Proposed, pending approval.
