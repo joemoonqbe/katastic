@@ -1,4 +1,4 @@
-# ADR 06 : Using Caching Service
+# ADR 06: Using Caching Service
 
 ## Status  
 
@@ -16,5 +16,6 @@ Positive:
 
 Negative:
 + Can add complexity to APIs and services which need to query cache or data store
-+ Need to carefully think through TTL of each cache and revise them over time 
++ Need to carefully think through TTL of each cache and revise them over time
++ Need scrutiny of what data can be cached and what should not be cached
 
