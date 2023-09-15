@@ -1,14 +1,14 @@
 # ADR 0 : Buy VS Build Components
 
+-- If team do not want to invest time and quick wins
+
 ## Status  
 Proposed
 
 ## Rationale 
 
 
-The principles of microservices are based on programming concepts and best practices from before distributed and service oriented architecutes were the norm. One of those principles is that the foundation of module design in software development is to keep coupling between modules low and cohesion high. This is in turn based on the more fundamental principles of programming known as separation of concerns, principle of least knowledge, and single responsibility principle.  
- Microservices incorporate the principles of Domain Driven Design which were also originally concieved for solving problems associated with technology partitioned layered monoliths
- The implication is that even if we decide to build the system as a modular monolith, we can still apply the proposed architecture when designing and constructing it's individual components. The modular structure of the system should at all times mirror the overall architecture proposed here, at each layer.
+ 
 
 ## Decision   
 We will use the Microservices architecture to model the Hey Blue! system
