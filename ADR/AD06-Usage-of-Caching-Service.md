@@ -5,7 +5,7 @@
 Proposed
 
 ## Rationale 
-A high performance Caching service must be used where applicable to allow access to commonly requested data. This reduces amoung of expensive "read" on persistant data storage used across the enterprise.
+A high performance Caching service must be used where applicable to allow access to commonly requested data. This reduces amoung of expensive "read" on persistant data storage used across the enterprise. "Cache-Aside" is the most common common pattern and caching should be done closer to experience layer.
 
 ## Decision
 ADR Proposed, pending approval.
