@@ -1,24 +1,25 @@
 # ADR 0 : Buy VS Build Components
 
--- If team do not want to invest time and quick wins
-
 ## Status  
-Proposed
+ACCEPTED
 
 ## Rationale 
-
-
- 
+As a startup, the decision often comes down to our specific needs, the skills of our team, and our long-term vision.
+As we need to move quickly and want to focus on our core value proposition, buying is usually the best choice for non-ip services.
+For our specialized needs, or for the components which area core part of our unique offering, building it ourself is often warranted.
 
 ## Decision   
-We will use the Microservices architecture to model the Hey Blue! system
+Weigh these considerations carefully, ideally with input from technical, business, and financial team members, to make the most informed decision, we have decied to build the Booking aggrgator services, 
+Insight analytics and Communication services which are generic ones will be pay-as-you go saas model. 
 
 ## Consequences  
 Postitive:
-+ Gives us a roadmap to steer the evolution of the system
-+ Allows us to separate heavily used components into their own processes to allow them to scale
-+ Clearly identifies the Domain model and partitioning of the system.  
++ Get teh MVP out quickly.
++ Gives us a roadmap to steer the evolution of the system, in a phased manner. 
++ Allows us to separate startup, IP services and heavily used generic components into their own processes to allow them to scale 
++ Clearly identifies the critical services
 
 Negative:  
-+ Data and code duplication
-+ Difficult to execute quickly if we strictly adhere to the architecture and develop each microservice from scratch
++ Integration and dependency with External Saas providers which will be critical for the services.
++ Difficult to execute quickly if we need more advanced features
++ Scaling cost and vendor lock in for services

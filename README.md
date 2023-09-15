@@ -1,4 +1,4 @@
-# katastic
+# Katastic
 Repo for the Road Warrier - Architecture Katas from Katatic.
 
 Team members : 
@@ -13,6 +13,9 @@ Team members :
 - [ProblemBackground](#ProblemBackground)
 - [Clarifications](#Clarifications) 
 - [Assumptions](#assumptions)
+    - [Business Assumptions](#Business-Assumptions)
+    - [User Experience Assumptions](#User-Experience-Assumptions)
+    - [Technical Assumptions](#Technical-Assumptions)
 - [Architecture Characteristics](#architecture-characteristics) 
     - [Driving Characteristics](#driving-characteristics)
     - [Implicit Characteristics](#implicit-characteristics)
@@ -154,7 +157,23 @@ Context-Actors
 ![Event-Stroming](diagrams/Event-Stroming.jpg)
 *Figure 3 Event Stroming Diagram*
 
+
+![Event-Stroming-2](diagrams/Event-Stroming2.jpg)
+*Figure 4 Event Stroming Diagram*
+
 ### Container
+
+#### Actors
+##### End-Users
+ - Interact with: Web Frontend, Mobile App
+##### Warrior Administrators
+- Configure new Partners and integrations
+- Interact with: Platform for maintenance, Analytics Engine for reports
+
+
+![Container](diagrams/Container.jpg)
+*Figure 5 Container Diagram*
+
 
 ##### Web App
 Technology: HTML, CSS, JavaScript (React or Angular)
@@ -214,18 +233,6 @@ Type: External APIs
 Used by: Backend API for pulling and updating reservation details
 Type: External APIs User's Email Provider
 
-
-#### Actors
-##### End-Users
- - Interact with: Web Frontend, Mobile App
-##### System Administrators
-- Interact with: Platform for maintenance, Analytics Engine for reports
-
-![Container](diagrams/Container.jpg)
-*Figure 4 Container Diagram*
-
-
-
 ### Services
  - [Admin-Service](services/Admin-Service.md)  
  - [Analytics-Service](services/Analytics-Service.md)  
@@ -235,22 +242,34 @@ Type: External APIs User's Email Provider
  - [Reporting-Service](services/Reporting-Service.md)  
  - [UserProfile-Service](services/UserProfile-Service.md)  
 
-
 ### Systems Architecture
 
 #### Deployment
 
+## Evaluation, Risks and Architecture Fitness  
+This final section is a discussion of how the proposed architecture adheres to the initially chosen driving characteristics, the associated trade-offs and risks. It highlights the areas that must be continuosly be tested and evaluated against benchmarks through fitness functions, ideally as part of the CI/CD pipeline.
+
+*Evaluating the architecture against driving caharacteristics*  
++ Performance - We mitigate network latency related performace issues with effective domain partitioning of data and partner services and avoiding distributed transactions, where possible. Individual services can be tested and benchmarked for perfomance. Using the proposed Caching database for relevent trips can help to better the over all performance
+
++ Availability - High availability requirements are isolated into stateless microservices. The Booking aggregator service is meant to be the most compute intensive, serving higher trip traffic and processing than others, it is therefore designed to be stateless with no associated persistent data store. Fitness tests for availability will involve running tests against staging clusters with simulated web traffic and partner api updates.
+
++ Configurability - The use of Microservices lends itself well to an configurable architecture, allowing new components and services to be introduced to serve additional requirements and use cases. However having this 
+
+*Risks*
++ Large volume of trips status tracking could have delays and impact the SLA of processing and notifications, which is the key differntiator. GPU processing capabilties to support this is being explored. Regional instance to customers to support 90% of use cases are being explored.
++ Databases could be a bottleneck to horizontal scalability. Serverless database services/tools, sharding and replication services/tools are possible mitigation strategies
++ Testability of Partner APIs involving multiple services. Tests for individual microservices will also need to include comprehensive cases for distributed workflows.
 
 ## ADRs
 
-[ADR0 Buy Vs Build Components](/ADR/ADR00-Buy-vs-Build.md)  
-[ADR1 Microservices Architecture](/ADR/ADR01-Microservices-architecture.md)  
- 
-[ADR3 REST API over Http and Websocket protocol](/ADR/ADR03-Rest-over-http-and-websockets.md)  
-[ADR4 Use of an API layer as the externally accessible interface to the system](/ADR/ADR04-API-Layer.md)  
-[ADR5 CQRS and Event Sourcing for message based Profile updates  ](/ADRs/ADR05-CQRS-EventSourcing.md)  
-[ADR6 Use in memory graph store for caching and looking up Officer geolocation](/ADR/ADR06-InMemory-Graph-Store-For-location-lookup.md)  
-[ADR7 Device triggered notications with geofencing](/ADR/ADR07-Device-triggered-notifications.md)  
+[ADR00 Buy Vs Build Components](/ADR/ADR00-Buy-vs-Build.md)  
+[ADR01 Microservices Architecture](/ADR/ADR01-Microservices-architecture.md)   
+[ADR02 Cloud-vs-On-Premise ](/ADR/ADR02-Cloud-vs-On-Premise.md)   
+[ADR03 Domain-based Services](/ADR/ADR03-Domain-based-services.md)   
+[ADR04 Event-driven Architecture](/ADR/ADR04-Event-driven-architecture.md)   
+[ADR05 Portable Technologies](/ADR/ADR05-Portable-technologies.md)   
+[ADR06 Caching Service](/ADR/ADR06-Caching-Service.md)   
 
 ## References
 [C4 Model](https://c4model.com/)  
@@ -267,5 +286,5 @@ Type: External APIs User's Email Provider
 
 ## Credits
 Note: Our work here is inspired by previous winners/participants since this is the first time we have participated in this event.
-
+Lei Zhao / Alok Mishra for reviews
 Original comparison matrix from [DeveloperToArchitect.com](https://www.developertoarchitect.com/downloads/worksheets.html)
