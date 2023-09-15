@@ -1,4 +1,4 @@
-# ADR 06 : 
+# ADR 06 : Using Caching Service
 
 ## Status  
 
