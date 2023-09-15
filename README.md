@@ -262,6 +262,7 @@ Type: External APIs User's Email Provider
 [Architecture: The Hard Parts](https://alistair.cockburn.us/hexagonal-architecture/)  
 [Documenting Software Architectures Views and Beyond](https://learning.oreilly.com/library/view/documenting-software-architectures/9780132488617/)  
 [Previous Kata Entries](https://github.com/tekiegirl/SoftwareArchitectureResources/blob/main/Resources/OReillyKata.md)
+[Caching Patterns](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html)
 
 
 ## Credits
