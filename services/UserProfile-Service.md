@@ -2,7 +2,7 @@
 
 ### Flow Diagram
 
-![Flow Diagram](../diagrams/UserProfile-service.jpg)
+![Flow Diagram](../diagrams/UserProfile-Service.jpg)
 *Flow Diagram Diagram*
 ### ADR
 

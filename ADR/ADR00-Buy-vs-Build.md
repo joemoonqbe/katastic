@@ -1,7 +1,7 @@
 # ADR 0 : Buy VS Build Components
 
 ## Status  
-ACCEPTED
+Accepted
 
 ## Rationale 
 As a startup, the decision often comes down to our specific needs, the skills of our team, and our long-term vision.

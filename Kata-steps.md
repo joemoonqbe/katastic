@@ -1,5 +1,5 @@
 ### Steps and Diagram Names for a Software Architecture Kata Team Response
-1. Understand the Kata Requirements
+1. Understand the Kata Requirements- The Problem
 Meet with the team to discuss the Kata and what it asks for.
 2. Identify Stakeholders and Concerns
 Diagram: "Stakeholder Matrix"
