@@ -183,9 +183,6 @@ Context-Actors
 
 ### Container
 
-
-
-
 ![Container](diagrams/Container.jpg)
 *Figure 5 Container Diagram*
 
@@ -253,9 +250,6 @@ Type: External APIs User's Email Provider
 ![Container](diagrams/Component-Diagram.jpg)
 *Figure 6 Component Diagram*
  
-
-
-
 ### Services
  - [Admin-Service](services/Admin-Service.md)  
  - [Analytics-Service](services/Analytics-Service.md)  
@@ -302,18 +296,17 @@ This final section is a discussion of how the proposed architecture adheres to t
 
 ## References
 [C4 Model](https://c4model.com/)  
-[Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)  
-[Fundamentals of Software Architecture](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/)  
+[DDD references](https://alok-mishra.com/category/domain-driven-design/)  
+[Caching Patterns](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html)  
 [Building Microservices](https://learning.oreilly.com/library/view/building-microservices-2nd/9781492034018/)  
-[Building Evolutionary Architectures](https://learning.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/)  
 [Building Event-Driven Microservices](https://learning.oreilly.com/library/view/building-event-driven-microservices/9781492057888/)  
-[Architecture: The Hard Parts](https://alistair.cockburn.us/hexagonal-architecture/)  
-[Documenting Software Architectures Views and Beyond](https://learning.oreilly.com/library/view/documenting-software-architectures/9780132488617/)  
+[Building Evolutionary Architectures](https://learning.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/)  
 [Previous Kata Entries](https://github.com/tekiegirl/SoftwareArchitectureResources/blob/main/Resources/OReillyKata.md)
-[Caching Patterns](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html)
-
+[Fundamentals of Software Architecture](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/)  
 
 ## Credits
-Note: Our work here is inspired by previous winners/participants since this is the first time we have participated in this event.
-Lei Zhao / Alok Mishra for reviews
+Note: Our work here is inspired by previous winners/participants since this is the first time we have participated in this event.  
+Lei Zhao / Alok Mishra for reviews  
+https://excalidraw.com/ for providing platfomm all diagrams,
+Github for hosting repos  
 Original comparison matrix from [DeveloperToArchitect.com](https://www.developertoarchitect.com/downloads/worksheets.html)
