@@ -233,6 +233,14 @@ Type: External APIs
 Used by: Backend API for pulling and updating reservation details
 Type: External APIs User's Email Provider
 
+###  Component-Diagram 
+
+![Container](diagrams/Component-Diagram.jpg)
+*Figure 6 Component Diagram*
+ 
+
+
+
 ### Services
  - [Admin-Service](services/Admin-Service.md)  
  - [Analytics-Service](services/Analytics-Service.md)  
@@ -245,6 +253,11 @@ Type: External APIs User's Email Provider
 ### Systems Architecture
 
 #### Deployment
+
+![Infrastructure](diagrams/Infrastructure.jpg)
+*Figure 7 Infrastructure Diagram*
+
+Infrastructure
 
 ## Evaluation, Risks and Architecture Fitness  
 This final section is a discussion of how the proposed architecture adheres to the initially chosen driving characteristics, the associated trade-offs and risks. It highlights the areas that must be continuosly be tested and evaluated against benchmarks through fitness functions, ideally as part of the CI/CD pipeline.
