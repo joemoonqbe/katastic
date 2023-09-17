@@ -21,11 +21,10 @@ Team members :
     - [Implicit Characteristics](#implicit-characteristics)
     - [Others Considered](#others-considered)
 - [Architecture Approach](#architecture-approach)
-    - [Goals](#goals)
+     - [Architecture Principles](#ArchitecturePrinciples)  
+     - [Architecture Patterns](#ArchitecturePatterns)  
 - [Context](#context)  
-    - [Actors](#actors)
-    - [Use Cases](#use-cases)
-    - [Event Storming](#event-storming)
+    - [Actors](#actors)    
 - [Containers](#containers)
     - [Micro Services](#micro-services)
     - [API Layer](#api-layer)
@@ -123,7 +122,7 @@ This app is a startup business. Cost of development, infrastructure requisition 
 
 ### Others Considered
 **Reliability**
-While the system is not mission critical, and cost of downtime is high, as the user trust on the bashbaord will be impacted and in the long run it will may result in loss of the customer base
+While the system is not mission critical, and cost of downtime is high, as the user trust on the bashboard will be impacted and in the long run it will may result in loss of the customer base
 **Recoverability**
 In case of service downtime, the system needs to be able to recover in a consistent state.
 
@@ -132,13 +131,16 @@ In case of service downtime, the system needs to be able to recover in a consist
 
 We start by pinpointing the key features that are essential for the system we're building. These key features will guide our design choices.
 
-Next, we'll use the C4 model to outline our system. We'll start by looking at it as a closed box, noting who will interact with it and how. Gradually, we'll open up this box to look at its parts, how they connect, and how they talk to each other.
+Next, we'll start by looking at it as a closed box, noting who will interact with it and how. Gradually, we'll open up this box to look at its parts, how they connect, and how they talk to each other.
 
 After that, we'll use event storming to figure out the different sections and elements of our system. This will help us understand how different parts should interact and where they belong.
 
 Lastly, we'll put together the system as a bunch of services that work together. ( ADR TBD ) These services will talk to each other directly or through events. We'll explain these services in a way that doesn't tie us down to any specific tools or technologies.
 
 Establish Ubiquitous Language for clearer understanding and standardisation
+
+- [Architecture Principles](architecturalPhilosophy/ArchitecturePrinciples.md)
+- [Architecture Patterns](architecturalPhilosophy/ArchitecturePatterns.md) 
 
 ### Architecture characteristics analysis
 
@@ -147,11 +149,29 @@ Architecture Styles Worksheet
 ![characteristics](diagrams/Arch-Style-Worksheet.jpg)
 *Figure 1 Architecture Styles Worksheet*
 
+
+#### Performance 
+    Based on the nature of the starup and idea of servicing the customers better than current providers performance is a key and essential characteristic to be the diffrentiator 
+#### Configurability
+    Given the number of partners that need to be integrated to add value and coverage across region this is an critical characteristic for the architecture
+#### Evolvability 
+    Modularity: The system is divided into modular components, making it easier to modify or replace individual parts without affecting others.
+    Loose Coupling: Components interact through well-defined interfaces, allowing for easier replacements or upgrades.
+    Plug-and-Play Components: Design with a view to add new features or modules with minimal changes to existing code.
+    Open Standards: Use of open standards and protocols to facilitate easier integration and future growth.
+
 ### Context 
 Context-Actors
 
 ![Context-Actors](diagrams/Context-Actors.jpg)
 *Figure 2 Context Diagram*
+
+#### Actors
+##### End-Users
+ - Interact with: Web Frontend, Mobile App
+##### Warrior Administrators
+- Configure new Partners and integrations
+- Interact with: Platform for maintenance, Analytics Engine for reports
  
 
 ![Event-Stroming](diagrams/Event-Stroming.jpg)
@@ -163,12 +183,7 @@ Context-Actors
 
 ### Container
 
-#### Actors
-##### End-Users
- - Interact with: Web Frontend, Mobile App
-##### Warrior Administrators
-- Configure new Partners and integrations
-- Interact with: Platform for maintenance, Analytics Engine for reports
+
 
 
 ![Container](diagrams/Container.jpg)
@@ -254,10 +269,11 @@ Type: External APIs User's Email Provider
 
 #### Deployment
 
-![Infrastructure](diagrams/Infrastructure.jpg)
+Infrastructure
+![Infrastructure](diagrams/Infrastructure.jpg) 
 *Figure 7 Infrastructure Diagram*
 
-Infrastructure
+
 
 ## Evaluation, Risks and Architecture Fitness  
 This final section is a discussion of how the proposed architecture adheres to the initially chosen driving characteristics, the associated trade-offs and risks. It highlights the areas that must be continuosly be tested and evaluated against benchmarks through fitness functions, ideally as part of the CI/CD pipeline.
